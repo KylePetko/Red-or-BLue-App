@@ -1,4 +1,4 @@
-# Red or BLue Android App
+# Red or Blue Android App
 Allows SHS students to easily check their bell schedules.
 
 1. Easily check if it's red or blue or no school tomorrow with color coded text.
