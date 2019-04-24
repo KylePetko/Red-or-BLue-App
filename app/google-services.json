@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "384276710646",
+    "firebase_url": "https://red-or-blue-app.firebaseio.com",
+    "project_id": "red-or-blue-app",
+    "storage_bucket": "red-or-blue-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:384276710646:android:fe05bb150ada5e7c",
+        "android_client_info": {
+          "package_name": "co.kylepet.redorblue"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "384276710646-p6fp4ok6q201usnh6b4bc3ouimuksmha.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrU2o7wy_V_i_qtS-4f9rb0Eb-Ks58SK0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

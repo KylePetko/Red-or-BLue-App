@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="co.kylepet.redorblue">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+
+
+
+
+    <application
+
+
+
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme"
+            tools:ignore="GoogleAppIndexingWarning">
+        <activity
+                android:name=".ErrorNoEmail"
+                android:label="@string/no_logged_in_gmail"
+                android:theme="@style/AppTheme.NoActionBar"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".NotificationActivity"
+                android:label="@string/notifiction_settings_title"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".ErrorNoInternet"
+                android:label="@string/no_internet_label"
+                android:theme="@style/AppTheme.NoActionBar"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".MainActivity"
+                android:label="@string/app_name"
+                android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <meta-data
+                android:name="io.fabric.ApiKey"
+                android:value="d2de29e088ad82826e1214aae7de8336664d5760" />
+        <meta-data
+                android:name="firebase_crashlytics_collection_enabled"
+                android:value="true" />
+
+    </application>
+
+</manifest>

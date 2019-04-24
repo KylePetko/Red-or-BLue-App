@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".MainActivity">
+
+    <item
+            android:id="@+id/menu_calendar"
+            android:icon="@drawable/ic_outline_calendar_today_24px"
+            app:showAsAction="never"
+            android:title="@string/check_school_calendar_title"/>
+
+    <item
+            android:id="@+id/menu_refresh"
+            android:icon="@drawable/ic_baseline_refresh_24px"
+            app:showAsAction="ifRoom"
+            android:title="@string/refresh"/>
+
+
+
+    <item
+            android:id="@+id/menu_settings"
+            android:icon="@drawable/ic_bell_outline"
+            app:showAsAction="never"
+            android:title="@string/title_notifications"/>
+
+    <item
+            android:id="@+id/menu_feedback"
+            android:icon="@drawable/ic_outline_feedback_24px"
+            app:showAsAction="never"
+            android:title="@string/menu_feedback"/>
+
+    <item
+            android:id="@+id/donateButton"
+            android:icon="@drawable/ic_paypal"
+            app:showAsAction="never"
+            android:title="@string/DonateOverflow"/>
+
+</menu>

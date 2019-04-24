@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Red or Blue</string>
+    <string name="title_home">Calendar</string>
+    <string name="title_settings">Settings</string>
+    <string name="DonateOverflow">Donate</string>
+    <string name="check_day">Check day</string>
+    <string name="no_logged_in_gmail">There are no logged in Gmail accounts</string>
+    <string name="no_internet_label">No internet</string>
+    <string name="refresh">Refresh</string>
+    <string name="SettingsText">Settings</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="check_school_calendar_title">School calendar</string>
+    <string name="notifiction_settings_title">Notification Settings</string>
+    <string name="menu_feedback">Feedback</string>
+</resources>
