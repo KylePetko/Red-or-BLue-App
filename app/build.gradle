@@ -10,8 +10,8 @@ android {
         applicationId "co.kylepet.redorblue"
         minSdkVersion 23
         targetSdkVersion 32
-        versionCode 9
-        versionName "0.8.2"
+        versionCode 10
+        versionName "0.8.3"
     }
     buildTypes {
         release {
