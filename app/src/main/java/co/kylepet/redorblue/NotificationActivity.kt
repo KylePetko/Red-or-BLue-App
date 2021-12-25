@@ -3,20 +3,14 @@ package co.kylepet.redorblue
 import android.annotation.SuppressLint
 import android.os.Build
 import android.os.Bundle
-import android.support.annotation.RequiresApi
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentTransaction
-import android.support.v4.content.ContextCompat
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.view.menu.MenuBuilder
-import android.support.v7.widget.Toolbar
 import android.view.Menu
-import com.crashlytics.android.Crashlytics
 import com.google.firebase.analytics.FirebaseAnalytics
-import io.fabric.sdk.android.Fabric
 import android.content.Intent
 import android.view.MenuItem
+import androidx.appcompat.widget.Toolbar;
+import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 
 
 class NotificationActivity : AppCompatActivity() {
@@ -46,10 +40,6 @@ class NotificationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_notification_settings)
-
-
-
-
 
     }
 

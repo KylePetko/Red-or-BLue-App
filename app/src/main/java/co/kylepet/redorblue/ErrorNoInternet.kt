@@ -1,7 +1,7 @@
 package co.kylepet.redorblue
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 
 class ErrorNoInternet : AppCompatActivity() {
 

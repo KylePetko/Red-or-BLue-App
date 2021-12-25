@@ -7,12 +7,12 @@ import android.animation.ArgbEvaluator
 import android.animation.ValueAnimator
 import android.annotation.TargetApi
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.*
 import android.content.ContentValues.TAG
 import android.content.Context.MODE_PRIVATE
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v4.widget.SwipeRefreshLayout
+
 import android.util.Log
 import android.widget.TextView
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -36,30 +36,17 @@ import android.os.Build
 import android.os.Handler
 import android.provider.ContactsContract
 import android.provider.Settings
-import android.support.annotation.NonNull
-import android.support.design.internal.BottomNavigationMenu
-import android.support.design.widget.BottomNavigationView
-import android.support.design.widget.Snackbar
-import android.support.v4.app.ActivityCompat
-import android.support.v4.app.ActivityCompat.shouldShowRequestPermissionRationale
-import android.support.v4.app.ShareCompat
-import android.support.v4.content.ContextCompat
-import android.support.v4.content.ContextCompat.startActivity
-import android.support.v4.content.LocalBroadcastManager
-import android.support.v4.content.PermissionChecker.checkSelfPermission
-import android.support.v4.os.HandlerCompat.postDelayed
-import android.support.v7.app.AlertDialog
-import android.support.v7.widget.Toolbar
 import android.util.Patterns
 import android.view.*
 import android.widget.Button
 import android.widget.Toast
-import com.crashlytics.android.Crashlytics
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import com.google.common.reflect.Reflection.getPackageName
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.rorb_fragment.*
 import org.w3c.dom.Text
 import java.lang.Exception
 import kotlin.concurrent.fixedRateTimer
@@ -84,10 +71,6 @@ class DateFragment : Fragment() {
     private val CREDENTIALS_FILE_PATH = "data/data/co.kylepet.redorblue/assets/credentials.json"
     var email = ""
 
-
-
-
-
     lateinit var rorbText: TextView
     lateinit var pullToRefresh: SwipeRefreshLayout
 
@@ -102,21 +85,17 @@ class DateFragment : Fragment() {
 
         rorbText.visibility = View.GONE
 
-
-
-
-
         pullToRefresh = view.findViewById(co.kylepet.redorblue.R.id.pullToRefresh) as SwipeRefreshLayout
 
 
 
         pullToRefresh.setOnRefreshListener {
-            readCal(rorbText, pullToRefresh, context!!, true, true)
+            readCal(rorbText, pullToRefresh, requireContext(), true, true)
 
 
         }
 
-        readCal(rorbText, pullToRefresh,  context!!, true, false)
+        readCal(rorbText, pullToRefresh,  requireContext(), true, false)
 
         return view
     }
@@ -540,12 +519,12 @@ class DateFragment : Fragment() {
                 pullToRefresh.isRefreshing = true
 
                 pullToRefresh.setOnRefreshListener {
-                    readCal(rorbText, pullToRefresh, context!!, true, true)
+                    readCal(rorbText, pullToRefresh, requireContext(), true, true)
 
 
                 }
 
-                readCal(rorbText, pullToRefresh,  context!!, true, true)
+                readCal(rorbText, pullToRefresh,  requireContext(), true, true)
 
             }
 
@@ -618,7 +597,7 @@ class DateFragment : Fragment() {
 
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent ) {
+    internal fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent ) {
         super.onActivityResult(requestCode, resultCode, data);
 
         when(requestCode){
@@ -631,7 +610,7 @@ class DateFragment : Fragment() {
                 Log.i(TAG, "onActivityResult called.");
 
 
-                        readCal(view?.findViewById(R.id.rorb_text)!!, view?.findViewById(R.id.pullToRefresh)!!,  context!!, true, true)
+                        readCal(view?.findViewById(R.id.rorb_text)!!, view?.findViewById(R.id.pullToRefresh)!!,  requireContext(), true, true)
                 }
 
 
@@ -650,7 +629,7 @@ class DateFragment : Fragment() {
             if(grantResults[0] == PackageManager.PERMISSION_GRANTED){
 
                 activity?.runOnUiThread{
-                    readCal(view?.findViewById(R.id.rorb_text)!!, view?.findViewById(R.id.pullToRefresh)!!,  context!!, true, false)
+                    readCal(view?.findViewById(R.id.rorb_text)!!, view?.findViewById(R.id.pullToRefresh)!!,  requireContext(), true, false)
 
                 }
 
@@ -659,7 +638,7 @@ class DateFragment : Fragment() {
             } else if(! shouldShowRequestPermissionRationale(Manifest.permission.READ_CONTACTS)){
                 //The user checked never show this again on the permission dialog
 
-                var alertBuilder = AlertDialog.Builder(context!!)
+                var alertBuilder = AlertDialog.Builder(requireContext())
                 alertBuilder.setCancelable(true)
                 alertBuilder.setTitle("Permission denied")
                 alertBuilder.setMessage("The calendar permission is required for this app to work. Go into this app's info, then go into permissions and enable the contacts permission." +
